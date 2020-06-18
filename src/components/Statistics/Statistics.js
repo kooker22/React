@@ -4,7 +4,7 @@ import styles from "./Statistics.module.css";
 import randomColor from "randomcolor";
 const Statistics = ({ title, stats }) => (
   <section className={styles.statistics}>
-    <h2 className={styles.title}>Upload stats</h2>
+    <h2 className={styles.title}>{title}</h2>
 
     <ul className={styles.stat_list}>
       {stats.map((item) => (

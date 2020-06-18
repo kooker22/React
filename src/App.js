@@ -21,7 +21,7 @@ function App() {
         stats={user.stats}
       />
 
-      <Statistics stats={statisticalData} />
+      <Statistics title="Upload stats" stats={statisticalData} />
       <FriendListItem friends={friends} />
       <TransactionHistory items={transactions} />
     </>
