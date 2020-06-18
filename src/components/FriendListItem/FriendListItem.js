@@ -4,14 +4,15 @@ import style from "./FriendListItem.module.css";
 
 const FriendListItem = ({ friends }) => (
   <ul className={style.friend_list}>
-    {friends.map((friend) => (
-      <li key={friend.id} className={style.item}>
+    {friends.map(({ id, avatar, name, isOnline }) => (
+      <li key={id} className={style.item}>
         <span
-          style={{ backgroundColor: friend.isOnline ? "#008000" : "#ff0000" }}
-          className={style.status}
-        ></span>
-        <img className={style.avatar} src={friend.avatar} alt="" width="48" />
-        <p className={style.name}>{friend.name}</p>
+          className={` ${isOnline ? style.isOnline : style.isOffline} ${
+            style.status
+          } `}
+        />
+        <img className={style.avatar} src={avatar} alt="" width="48" />
+        <p className={style.name}>{name}</p>
       </li>
     ))}
   </ul>
